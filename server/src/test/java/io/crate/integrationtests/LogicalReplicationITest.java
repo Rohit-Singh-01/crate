@@ -453,6 +453,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         createSubscription("sub1", "pub1");
@@ -486,6 +487,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE PUBLICATION pub2 FOR TABLE doc.t1 PARTITION (p = 2)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub1" +
@@ -511,6 +513,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber(
@@ -544,6 +547,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber(
@@ -568,6 +572,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber(
@@ -624,6 +629,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSecondPublisher(
@@ -634,6 +640,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnSecondPublisher("REFRESH TABLE doc.t1");
         executeOnSecondPublisher("CREATE PUBLICATION pub2 FOR TABLE doc.t1 PARTITION (p = 2)");
         executeOnSecondPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnSecondPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnSecondPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub1" +
@@ -662,6 +669,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSecondPublisher(
@@ -672,6 +680,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnSecondPublisher("REFRESH TABLE doc.t1");
         executeOnSecondPublisher("CREATE PUBLICATION pub2 FOR TABLE doc.t1 PARTITION (p = 2)");
         executeOnSecondPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnSecondPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnSecondPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub1" +
@@ -693,6 +702,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE PUBLICATION pub2 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub1" +
@@ -714,6 +724,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("CREATE PUBLICATION pub_partition FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE PUBLICATION pub_table FOR TABLE doc.t1");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub_partition" +
@@ -735,6 +746,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("CREATE PUBLICATION pub_partition FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE PUBLICATION pub_table FOR TABLE doc.t1");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub_table" +
@@ -756,6 +768,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE PUBLICATION pub2 FOR TABLE doc.t1 PARTITION (p = 2)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
 
         executeOnSubscriber("CREATE SUBSCRIPTION sub1" +
@@ -784,6 +797,7 @@ public class LogicalReplicationITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
         createSubscription("sub1", "pub1");
 

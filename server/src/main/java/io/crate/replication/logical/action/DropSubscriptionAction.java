@@ -100,7 +100,8 @@ public class DropSubscriptionAction extends ActionType<AcknowledgedResponse> {
                 String partitionIdent = indexToRemove.partitionValues().isEmpty()
                     ? null
                     : PartitionName.encodeIdent(indexToRemove.partitionValues());
-                if (targetsToKeep.contains(new TableOrPartition(targetRelation, partitionIdent))) {
+                if (targetsToKeep.contains(new TableOrPartition(targetRelation, partitionIdent))
+                    || targetsToKeep.contains(new TableOrPartition(targetRelation, null))) {
                     continue;
                 }
                 var updatedSettings = removeSubscriptionSetting(indexToRemove.getSettings());

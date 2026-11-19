@@ -563,7 +563,10 @@ public final class MetadataTracker implements Closeable {
 
         for (TableOrPartition subscriptionTarget : subscription.relations().keySet()) {
             RelationName subscriptionRelation = subscriptionTarget.table();
-            if (!publishedTargets.contains(subscriptionTarget)) {
+            boolean isPublished = publishedTargets.contains(subscriptionTarget)
+                || subscriptionTarget.partitionIdent() != null
+                && publishedTargets.contains(new TableOrPartition(subscriptionRelation, null));
+            if (!isPublished) {
                 // Stop subscribing to removed targets, but retain their local data.
                 targetsToRemoveFromSubscription.add(subscriptionTarget);
                 continue;

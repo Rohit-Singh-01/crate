@@ -555,6 +555,7 @@ public class MetadataTrackerITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
         createSubscription("sub1", "pub1");
 
@@ -587,6 +588,7 @@ public class MetadataTrackerITest extends LogicalReplicationITestCase {
         executeOnPublisher("REFRESH TABLE doc.t1");
         executeOnPublisher("CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
         createSubscription("sub1", "pub1");
 
@@ -625,6 +627,7 @@ public class MetadataTrackerITest extends LogicalReplicationITestCase {
         executeOnPublisher(
             "CREATE PUBLICATION pub1 FOR TABLE doc.t1 PARTITION (p = 1), doc.t1 PARTITION (p = 2)");
         executeOnPublisher("CREATE USER " + SUBSCRIBING_USER);
+        executeOnPublisher("GRANT AL TO " + SUBSCRIBING_USER);
         executeOnPublisher("GRANT DQL ON TABLE doc.t1 TO " + SUBSCRIBING_USER);
         createSubscription("sub1", "pub1");
 
